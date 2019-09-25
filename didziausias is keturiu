@@ -1,0 +1,40 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+int a, b, c, d, did;
+bool adid, bdid, cdid;
+
+aa:
+    cout<<"a =  ";
+    cin>>a;
+    cout<<"b =  ";
+    cin>>b;
+    cout<<"c =  ";
+    cin>>c;
+    cout<<"d =  ";
+    cin>>d;
+    adid = (a>=b)&&(a>=c)&&(a>=d);
+    bdid = (b>=a) && (b>=c)&&(b>=d);
+    cdid = (c>=a)&&(c>=b)&&(c>=d);
+
+    if  (adid){
+        did=a;
+    }
+    else if (bdid){
+        did=b;
+    }
+    else if (cdid) {
+            did=c;
+    }
+    else {
+        did=d;
+    }
+
+    cout<<"didziausias yra   "<<did<< endl;
+
+    return 0;
+
+
+}
