@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+int a, b, c, d, did;
+
+
+
+    cout<<"a =  ";
+    cin>>a;
+    did=a;
+    cout<<"b =  ";
+    cin>>b;
+    if (did<=b) {did=b;}
+    cout<<"c =  ";
+    cin>>c;
+    if (did<=c) {did=c;}
+    cout<<"d =  ";
+    cin>>d;
+    if (did<=d) {did=d;}
+
+
+
+
+    cout<<"didziausias yra   "<<did<< endl;
+
+    return 0;
+
+
+}
