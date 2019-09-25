@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+int val, m, nval, nm;
+bool gerasLaikas;
+aa:
+    cout<<"Iveskite valandas";
+    cin>>val;
+    cout<<"Iveskite minutes";
+    cin>>m;
+
+    gerasLaikas = (val>=0 && m>=0) && (val<=23 && m<=59);
+    if (!gerasLaikas) {
+        cout<<"nurodytas laikas neteisingo formato"<<endl; goto aa;
+    }
+
+
+     if((val==23)&&(m==59)) {
+                                nval=0;
+                                nm=0;
+                                  }
+        else if (m==59) {
+                           nval=val+1;
+                           nm=0;
+        }
+          else {
+             nval=val;
+             nm=m+1;
+          }
+    cout<<"Laikas po minutes yra"<<nval<<"   "<<nm<< endl;
+
+    return 0;
+
+
+}
