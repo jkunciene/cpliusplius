@@ -1,0 +1,41 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main()
+{
+int sk;
+double stipendija;
+const float Konstanta=2.4;
+
+cout<<"koks jusu vidurkis sk =  ";
+cin>>sk;
+
+stipendija = 10 * sk /Konstanta;
+
+
+
+    switch(sk){
+    case 1:
+    case 2:
+    case 3:
+    case 4: cout<<"negaunate stipendijos  ";break;
+
+
+    case 5: cout<<"saunu gausite  "<<stipendija;break;
+    case 6: cout<<"saunu gausite  "<<stipendija;break;
+    case 7: cout<<"saunu gausite  "<<stipendija;break;
+    case 8: cout<<"saunu gausite  "<<stipendija;break;
+    case 9: cout<<"saunu gausite  "<<stipendija;break;
+    case 10: cout<<"saunu gausite  "<<stipendija;break;
+
+    default :cout<<"netinkamas skaicius";break;
+        }
+        cout<<endl<<"programa baigia darba";
+    return 0;
+
+
+}
+
+
+
