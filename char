@@ -1,0 +1,33 @@
+#include <iostream>
+#include <algorithm>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+int pirmas, antras, rezultatas;
+char veiksmas;
+
+cout<<"Koks pirmas skaicius  "; cin>>pirmas;
+cout<<"Koks antras skaicius  "; cin>>antras;
+cout<<"pasirinkite operacija (+,-,*,/,^)  "; cin>>veiksmas;
+
+switch (veiksmas)
+{
+    case '+' : rezultatas = pirmas+antras; break;
+    case '-' : rezultatas = pirmas-antras; break;
+    case '*' : rezultatas = pirmas*antras; break;
+    case '/' : rezultatas = pirmas/antras; break;
+    case '^' : rezultatas = pow(pirmas,antras); break;
+    default: cout<<"Bloga operacija"<<endl; goto galas; break;
+
+}
+cout<<"Rezultatas  "<<rezultatas;
+galas:
+    return 0;
+
+
+}
+
+
+
