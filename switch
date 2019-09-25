@@ -1,0 +1,24 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main()
+{
+int sk;
+    cout<<"sk =  ";
+    cin>>sk;
+    switch(sk){
+    case 1: cout<<"Pirmadienis";break;
+    case 2: cout<<"Antradienis";break;
+    case 3: cout<<"Treciadienis";break;
+    case 4: cout<<"Ketvirtadienis";break;
+    case 5: cout<<"Penktadienis";break;
+    case 6: cout<<"Sestadienis";break;
+    case 7: cout<<"Sekmadienis";break;
+    default :cout<<"Blogas laikas";break;
+        }
+        cout<<endl<<"programa baigia darba";
+    return 0;
+
+
+}
