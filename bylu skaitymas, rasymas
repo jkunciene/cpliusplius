@@ -1,0 +1,20 @@
+#include <iostream>
+#include <fstream> //darbui su bylomis
+
+using namespace std;
+
+int main() {
+
+    int a, b, suma;
+
+    ifstream skaito("duom.txt"); //komanda duomenu nuskaitymui
+    ofstream raso("rez.txt"); //komanda duomenu rasymui
+
+    skaito>>a;
+    skaito>>b;
+    suma = a+b;
+    raso<<a<<"  +  "<<b<<"   =  "<<suma;
+skaito.close();
+raso.close();
+return 0;
+}
