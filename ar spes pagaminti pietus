@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+int v, m, p, nval, nnval, nnm, nm, vv, vm;
+
+    cout<<"Kuria valanda mama pradejo gaminti pietus  ";
+    cin>>v;
+    cout<<"Kiek tada buvo minuciu   ";
+    cin>>m;
+    cout<<"Kiek minuciu gamins mama pietus?  ";
+    cin>>p;
+    cout<<"Kelinta valanda is lauko grizta vaikai?  ";
+    cin>>vv;
+    cout<<"Kiek tada yra minuciu?  ";
+    cin>>vm;
+
+    nval=v;
+    nm=m+p;
+
+        if (nm >=60){
+            nnval=nval+1;
+            nnm=nm%60;
+                }
+
+
+    cout<<"mama baigs gaminti pietus  "<<nnval<<"   "<<nnm<< endl;
+
+    if(nnval>vv){
+        cout<<"nespes";
+    }
+         else if(nnval==vv){
+                            if(nnm>vm){cout<<"nespes";}
+                            else{cout<<"spes";}
+
+                            }
+    else{
+        cout<<"spes";
+    }
+
+    return 0;
+}
