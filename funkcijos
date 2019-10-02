@@ -1,0 +1,74 @@
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+using namespace std;
+    ifstream in("duom.txt");
+    ofstream out("rez5.txt");
+    void skaito (string &vardas, int &p1, int &p2, int &p3);
+    int gerlaikas(int p1, int p2, int p3);
+    void gerveik( int p1, int p2, int gr, string v1, string v2, string v3, string &gv);
+    void isvedimas(string laimetojas, int rs);
+ int main()
+ {
+   string veik1, veik2, veik3, v1Winner, v2Winner, v3Winner;
+   int v1r1, v1r2, v1r3, v2r1, v2r2, v2r3,v3r1, v3r2, v3r3, g1, g2, g3;
+ 
+   //---------------Skaitom-------------------
+     skaito(veik1, v1r1, v1r2, v1r3);
+     skaito(veik2, v2r1, v2r2, v2r3);
+     skaito(veik3, v3r1, v3r2, v3r3);
+   //-----------------------------------------
+   //------------greiciausias laikas----------
+     g1=gerlaikas(v1r1,v2r1, v3r1);
+     g2=gerlaikas(v1r2,v2r2, v3r2);
+     g3=gerlaikas(v1r3,v2r3, v3r3);
+   //-----------------------------------------
+   //-----------greiciausias veikejas---------
+        gerveik(v1r1, v2r1, g1, veik1, veik2, veik3, v1Winner);
+        gerveik(v1r2, v2r2, g2, veik1, veik2, veik3, v2Winner);
+        gerveik(v1r3, v2r3, g3, veik1, veik2, veik3, v3Winner);
+   //----------------------------------------
+   //----------------Isvedimas---------------
+      int i;
+      i=1;
+      isvedimas(v1Winner, i);
+      i++;
+      isvedimas(v2Winner, i);
+      i++;
+      isvedimas(v3Winner, i);
+   //----------------------------------------
+ 
+   in.close();
+   out.close();
+   return 0;
+ }
+ 
+ 
+ void skaito (string &vardas, int &p1, int &p2, int &p3)
+ {
+      in>>vardas>>p1>>p2>>p3;
+ 
+ }
+ 
+int gerlaikas(int p1, int p2, int p3)
+{
+    int gerlaik;
+    gerlaik=min(p1, min(p2, p3));
+    return gerlaik;
+}
+ 
+ 
+  void gerveik( int p1, int p2, int gr, string v1, string v2, string v3, string &gv)
+  {
+       if (gr==p1){gv = v1;}
+        else if (gr==p2){gv = v2;}
+                else {gv = v3;}
+  }
+ 
+void isvedimas(string laimetojas, int rs)
+ {
+ 
+      out<<rs<<"-ojo rato laimetojas "<<laimetojas<<endl;
+ 
+ 
+ }
