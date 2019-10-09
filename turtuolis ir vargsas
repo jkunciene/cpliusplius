@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+ 
+int main()
+{
+  long long sumaTur, sumaVar, prDiena, sumaVarEur;
+  sumaTur = 0; sumaVar = 0;
+  for(int i=1; i<=31; i++){
+    sumaTur+=1000000;
+    if ( i==1){prDiena = 2; sumaVar = sumaVar + prDiena;}
+         else {prDiena = 2*prDiena; sumaVar = sumaVar + prDiena;}
+ 
+ 
+    sumaVarEur=sumaVar / 100;
+    cout<<i<<"-oja diena"<<endl;
+    cout<<" turtuolis tures "<<sumaTur<<" eur."<<endl;
+    cout<<" Vargsas tures  " <<sumaVar<<"cnt. arba "<<sumaVarEur<<"eur. Vargsas gavo "<<prDiena<<endl;
+ 
+ 
+  }
+ 
+ 
+  return 0;
+ 
+}
