@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int main()
+ {
+    int sk, suma;
+    cout<<" sk=  "; cin>>sk;
+    suma=0;
+    for(int i=1; i<=sk; i++){
+
+        suma= suma + i;
+        if(i==sk){
+          cout<<i;
+
+        }
+        else{cout<<i<<"   +   ";}
+
+
+    }
+
+    cout<<" =  "<<suma;
+
+
+    return 0;
+ }
