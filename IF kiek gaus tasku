@@ -1,0 +1,35 @@
+#include <iostream>
+#include <math.h>
+#include <algorithm>
+using namespace std;
+
+
+double  x, y, a, b, atstumas, tarpinis1, tarpinis2;
+
+ int main()
+ {
+    cout<<"iveskite taikinio centro koordinates x ir y ";
+    cin>>x>>y;
+    cout<<"iveskite saulio pataikymo koordinates x1 ir y1 ";
+    cin>>a>>b;
+
+    //tarpinis1=pow((x-a)2);
+    //tarpinis2=pow((y-b)2);
+    //atstumas=sqrt(tarpinis1+tarpinis2);
+
+    atstumas=sqrt((pow((x-a),2))+(pow((y-b),2)));
+
+    if (atstumas<=5){
+        cout<<"Saulys surinko 10 tasku, nes nuo centro nukrypo tik "<<atstumas<<"  cm";
+    }
+    else if((atstumas>=6)&&(atstumas<=10)){
+            cout<<"Saulys surinko 5 taskus, nes nuo centro nukrypo "<<atstumas<<"  cm";
+
+    }
+
+    else{
+        cout<<"Saulys surinko 0 tasku, nes nuo centro nukrypo per daug, net "<<atstumas<<"  cm";
+    }
+
+    return 0;
+ }
