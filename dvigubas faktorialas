@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+int main()
+ {
+    int sk, faktorialas, nuoKiekSkaiciuoti;
+
+    cout<<" sk=  ";
+    cin>>sk;
+
+    if(sk % 2 ==0){nuoKiekSkaiciuoti=2;}
+                else{nuoKiekSkaiciuoti=1;}
+
+    faktorialas=1;
+
+    for(int i=nuoKiekSkaiciuoti; i<=sk; i+=2){   //i = i + 2
+
+        faktorialas = faktorialas * i;
+
+        if(i==sk)
+            {cout<<i;}
+                    else{cout<<i<<"   *   ";}
+
+       }
+
+
+   cout<<" =  "<<faktorialas;
+
+
+    return 0;
+ }
