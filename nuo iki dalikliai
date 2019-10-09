@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+ 
+int main()
+{
+  int n, m, kiek;
+  cout<<"Koks pirmas skaicius "; cin>>n;
+  cout<<"iki kiek mes tikrinsim "; cin>>m;
+  for(int i= n; i<=m; i++){
+    kiek = 0;
+    for(int j = 2; j<=i/2; j++){
+        if (i % j ==0) {kiek++;
+                         break;
+                                }
+    }
+    if (kiek == 0) {cout<<i<<" ";}
+        }
+ 
+ 
+  return 0;
+ 
+}
