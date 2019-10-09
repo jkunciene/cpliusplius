@@ -1,0 +1,42 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main()
+ {
+
+    int i, n, paz, didz, maz, suma;
+    float vidurkis;
+    ifstream skaito("pazymiai.txt");
+
+    skaito>>n;
+    suma=0;
+
+    for(i=1;i<=n;i++){
+
+        skaito>>paz;
+        if(i==1){
+            didz=paz;
+            maz=paz;
+        }
+         else{
+                if(paz>didz){
+                            didz=paz;
+                                    }
+                            else if(paz<maz){
+                                            maz=paz;
+                                            }
+
+        }
+        suma=suma+paz;
+
+    }
+    vidurkis=(float)suma/n;
+    cout<<suma<<endl;
+    cout<<vidurkis<<endl;
+    cout<<didz<<endl;
+    cout<<maz<<endl;
+   skaito.close();
+   return 0;
+ }
