@@ -1,0 +1,30 @@
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+int metai, kelinta;
+const int pirmoji=1896;
+
+int main()
+ {
+    cout<<"iveskite jus dominancius metus ";
+    cin>>metai;
+
+    if ((metai-pirmoji)%4==0){
+
+        cout<<"Jusu ivesti metai yra olimpiniai";
+        kelinta=((metai-pirmoji)/4)+1;
+        cout<<"Olimpiniu zaidyniu numeris yra "<<kelinta<<endl;
+
+
+    }
+        else {
+
+            cout<<"Jusu ivesi metai yra neolimpiniai ";
+        }
+
+
+
+ }
+
