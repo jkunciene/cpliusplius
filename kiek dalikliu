@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+int main()
+ {
+ int sk, kiek;
+ cout<<"sk  "; cin>>sk;
+ kiek=0;
+
+ for(int i=1; i<=sk; i++){
+
+    if (sk % i ==0)
+        {cout<<i<<" daliklis  "; kiek++;}
+ }
+
+cout<<kiek;
+if(kiek ==2){
+
+    cout<<"pirminis ";
+} else {cout<<"sudetinis";}
+ }
