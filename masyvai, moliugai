@@ -1,0 +1,54 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+ ifstream in("duom1.txt");
+ ofstream out("rez5.txt");
+ void skaitymas (float Moliugai[], int kiekis);
+ float vidurkis(float Moliugai[], int kiekis);
+ void atrinkimas(float Moliugai[], int kiekis, float lengviausias, float sunkiausias, float AMoliugai[], int &aKiekis);
+ 
+int main()
+{
+    int moliuguKiekis;
+    float maziausiasSvoris, didziausiasSvoris;
+    in>>moliuguKiekis>>maziausiasSvoris>>didziausiasSvoris;
+    float VisiMoliugai[moliuguKiekis], visasVidurkis, atrinktasVidurkis, AtrinktiMoliugai[moliuguKiekis];
+    int atrinktuMoliuguKiekis(0);
+    skaitymas(VisiMoliugai, moliuguKiekis);
+    visasVidurkis=vidurkis(VisiMoliugai, moliuguKiekis);
+    atrinkimas(VisiMoliugai, moliuguKiekis, maziausiasSvoris, didziausiasSvoris,AtrinktiMoliugai, atrinktuMoliuguKiekis);
+ 
+    atrinktasVidurkis=vidurkis(AtrinktiMoliugai, atrinktuMoliuguKiekis);
+ 
+    out<<"Visu moliugu vidurkis "<<visasVidurkis<<endl;
+    out<<"I supirkima atrinkta "<<atrinktuMoliuguKiekis<<endl;
+    out<<"Atrinktu moliugu vidurkis "<<atrinktasVidurkis<<endl;
+    out<<"Atrinktu sarasas ";
+    for(int i=0;i<atrinktuMoliuguKiekis; i++){out<<AtrinktiMoliugai[i]<<" ";}
+ 
+ 
+ 
+  return 0;
+}
+ 
+void skaitymas (float Moliugai[], int kiekis)
+{
+    for(int i=0; i<kiekis; i++){in>>Moliugai[i];}
+}
+ 
+float vidurkis(float Moliugai[], int kiekis)
+{
+   float svoriuSuma(0), svoriuVidurkis;
+    for(int i=0; i<kiekis; i++){svoriuSuma=svoriuSuma+Moliugai[i];}
+    svoriuVidurkis= svoriuSuma / kiekis;
+    return svoriuVidurkis;
+}
+ 
+void atrinkimas(float Moliugai[], int kiekis, float lengviausias, float sunkiausias, float AMoliugai[], int &aKiekis)
+     {
+       for(int i=0; i<kiekis; i++){
+            if(Moliugai[i]>=lengviausias and Moliugai[i]<=sunkiausias)
+                                    {AMoliugai[aKiekis] = Moliugai[i]; aKiekis++;}
+       }
+ 
+     }
