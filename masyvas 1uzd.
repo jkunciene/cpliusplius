@@ -1,0 +1,46 @@
+#include <iostream>
+
+
+using namespace std;
+
+int main() {
+
+    int  n;
+//---masyvo elementu skaicius----
+    cout<<"kiek turi Petriukas pazymiu?"; cin>>n;
+    int P[n];
+    //-----masyvo ivedimas----
+    for(int i=0; i<n; i++){
+        cout<<"Ivesk   "<<i+1<<"  -aji pazymi   ";
+        cin>>P[i];
+        if(P[i]>10 or P[i]<1){cout<<"blogas balas \n"; i--;}
+    }
+//------masyvo isvedimas
+    cout<<"Petriuko pazymiai  \n";
+    for(int i=0; i<n; i++){cout<<P[i]<<"  ";}
+    cout<<endl<<"Masyvo pabaiga"<<endl;
+    //----------------------------
+    //----mamos masyvas
+    int M[n], msk(0);
+    for(int i=0; i<n; i++){
+        if(P[i]>=4){M[msk]=P[i]; msk++;}
+    }
+//-------isvedimas
+    cout<<"Mamos masyvas  \n";
+    for(int i=0; i<msk; i++){cout<<M[i]<<"  ";}
+    cout<<endl<<"Masyvo pabaiga"<<endl;
+
+    //------tecio masyvas
+
+    int T[n], tsk(0);
+    for(int i=0; i<n; i++){
+        if(P[i]>=6){T[tsk]=P[i]; tsk++;}
+    }
+//-------isvedimas
+    cout<<"Tetes masyvas  \n";
+    for(int i=0; i<tsk; i++){cout<<T[i]<<"  ";}
+    cout<<endl<<"Masyvo pabaiga"<<endl;
+
+
+  return 0;
+}
