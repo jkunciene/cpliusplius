@@ -1,0 +1,52 @@
+#include <iostream>
+
+
+using namespace std;
+int skaicius();
+void ivedimas(int W[], int z);
+void isvedimas(int W[], int z, string tekstas);
+void isrinkimas (int W[], int z, int balas, int G[], int &sk);
+
+int main() {
+    int n;
+    n=skaicius();
+    int P[n];
+    ivedimas(P, n);
+    isvedimas(P, n, "Petriuko");
+    int M[n], msk;
+    isrinkimas(P, n, 4, M, msk);
+    isvedimas(M, msk, "Mamos");
+    int T[n], tsk;
+    isrinkimas(M, msk, 6, T, tsk);
+    isvedimas(T, tsk, "Tecio");
+
+
+  return 0;
+}
+
+//-------isvedimas
+void isvedimas(int W[], int z, string tekstas){
+    cout<<tekstas<<" masyvas  \n";
+    for(int i=0; i<z; i++){cout<<W[i]<<"  ";}
+    cout<<endl<<"Masyvo pabaiga"<<endl;
+}
+void isrinkimas (int W[], int z, int balas, int G[], int &sk){
+    sk=0;
+    for(int i=0; i<z; i++){
+        if(W[i]>=balas){G[sk]=W[i]; sk++;}
+    }
+}
+int skaicius()
+{
+    int  n;
+    cout<<"kiek turi Petriukas pazymiu?"; cin>>n;
+    return n;
+
+}
+void ivedimas(int W[], int z){
+    for(int i=0; i<z; i++){
+        cout<<"Ivesk   "<<i+1<<"  -aji pazymi   ";
+        cin>>W[i];
+        if(W[i]>10 or W[i]<1){cout<<"blogas balas \n"; i--;}
+    }
+}
