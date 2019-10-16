@@ -1,0 +1,56 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+ifstream in("text.txt"); //komanda duomenu nuskaitymui
+ofstream out("rez.txt"); //komanda duomenu rasymui
+
+int skaicius();
+void ivedimas(int W[], int z);
+void isvedimas(int W[], int z, string tekstas);
+void isrinkimas (int W[], int z, int balas, int G[], int &sk);
+
+int main() {
+    int n;
+    n=skaicius();
+    int P[n];
+    ivedimas(P, n);
+    isvedimas(P, n, "Petriuko");
+    int M[n], msk;
+    isrinkimas(P, n, 4, M, msk);
+    isvedimas(M, msk, "Mamos");
+    int T[n], tsk;
+    isrinkimas(M, msk, 6, T, tsk);
+    isvedimas(T, tsk, "Tecio");
+
+    in.close();
+    out.close();
+  return 0;
+}
+
+void isvedimas(int W[], int z, string tekstas){
+    out<<tekstas<<" masyvas  \n";
+    for(int i=0; i<z; i++){out<<W[i]<<"  ";}
+    out<<endl<<"Masyvo pabaiga"<<endl;
+
+}
+void isrinkimas (int W[], int z, int balas, int G[], int &sk){
+    sk=0;
+    for(int i=0; i<z; i++){
+        if(W[i]>=balas){G[sk]=W[i]; sk++;}
+    }
+}
+int skaicius()
+{
+    int  n;
+    in>>n;
+    return n;
+
+}
+void ivedimas(int W[], int z){
+    for(int i=0; i<z; i++){
+        in>>W[i];
+        if(W[i]>10 or W[i]<1){i--;}
+    }
+}
