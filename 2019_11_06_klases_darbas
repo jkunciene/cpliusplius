@@ -1,0 +1,63 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+    ifstream in("duomenys.txt");
+    ofstream out("rezultatai.txt");
+
+    //pries main aprasome funkcijos prototipa
+
+    int kiekis(); //funkcija, kuri grazina kintamaji per funkcijos varda
+    void skaitymas(int Masyvas[], int kiek);
+    void rasom(int Masyvas[], int kiek, string tekstas);
+
+int main()
+
+{
+    int n, //A masyvo elementu skaicius
+        m; //B masyvo elementu skaicius
+
+    //kreipiames i funkcija
+    n=kiekis();
+    cout<<n; //patikrinu
+    m=kiekis();
+    cout<<m; //patikrinu
+
+    int A[n], B[m];
+
+    skaitymas(A, n);
+    skaitymas(B, m);
+
+    rasom(A, n, "A");
+    rasom(B, m, "B");
+
+
+
+
+    in.close();
+    out.close();
+
+    return 0;
+
+
+}
+
+//-------- nuskaitymo ir kiekio parsinesimo funkcija
+int kiekis(){
+    int kiek;
+    in>>kiek;
+    return kiek;
+}
+//----- skaitymas masyvo
+void skaitymas(int Masyvas[], int kiek){
+    for(int i=0; i<kiek; i++){
+        in>>Masyvas[i];}
+}
+//----rasymo funkcija
+void rasom(int Masyvas[], int kiek, string tekstas){
+    out<<"Masyvas  "<<tekstas<<endl;
+    for(int i=0; i<kiek; i++){
+        out<<Masyvas[i]<<" ";}
+        out<<endl;
+}
