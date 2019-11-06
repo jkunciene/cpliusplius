@@ -1,0 +1,103 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+    ifstream in("duomenys.txt");
+    ofstream out("rezultatai.txt");
+
+    //pries main aprasome funkcijos prototipa
+
+    int kiekis(); //funkcija, kuri grazina kintamaji per funkcijos varda
+    void skaitymas(int Masyvas[], int kiek);
+    void rasom(int Masyvas[], int kiek, string tekstas);
+    void rikiavimas (int Masyvas[], int kiek);
+    void radimas(int Masyvas[], int kiek, int &kitasMax, int kelintasPagalDydi);
+
+int main()
+
+{
+    int n, //A masyvo elementu skaicius
+        m; //B masyvo elementu skaicius
+
+    //kreipiames i funkcija
+    n=kiekis();
+    cout<<n; //patikrinu
+    m=kiekis();
+    cout<<m; //patikrinu
+
+    int A[n], B[m];
+
+    skaitymas(A, n);
+    skaitymas(B, m);
+
+    rasom(A, n, "A");
+    rasom(B, m, "B");
+
+    rikiavimas(A, n);
+    rasom(A, n, "A surikiuotas");
+    rikiavimas(B, m);
+    rasom(B, m, "B surikiuotas");
+
+    int antrasMax;
+    radimas(A, n, antrasMax, 2 );
+    cout<<antrasMax;
+    radimas(B, m, antrasMax, 3 );
+    cout<<antrasMax;
+
+    in.close();
+    out.close();
+
+    return 0;
+
+
+}
+
+//-------- nuskaitymo ir kiekio parsinesimo funkcija
+int kiekis(){
+    int kiek;
+    in>>kiek;
+    return kiek;
+}
+//----- skaitymas masyvo
+void skaitymas(int Masyvas[], int kiek){
+    for(int i=0; i<kiek; i++){
+        in>>Masyvas[i];}
+}
+//----rasymo funkcija
+void rasom(int Masyvas[], int kiek, string tekstas){
+    out<<"Masyvas  "<<tekstas<<endl;
+    for(int i=0; i<kiek; i++){
+        out<<Masyvas[i]<<" ";}
+        out<<endl;
+}
+//--rikiavimas
+void rikiavimas (int Masyvas[], int kiek){
+    int laikinas;
+    for(int i=0; i<kiek; i++){
+        for(int j=1; j<kiek-i; j++){
+            if(Masyvas[j-1]<=Masyvas[j]){
+                    //---sukeitimas vietomis
+                laikinas = Masyvas[j];
+                Masyvas[j] = Masyvas[j-1];
+                Masyvas[j-1] = laikinas;
+
+            //swap(Masyvas[j], Masyvas[j-1]); turi buti virsuje includintas algorithm
+            }
+        }
+    }
+}
+//antras didziausias
+void radimas(int Masyvas[], int kiek, int &kitasMax, int kelintasPagalDydi){
+    int k=1;
+    for(int i=1; i<kiek; i++){
+        if(Masyvas[i]!=Masyvas[i-1]){
+            k++;
+            if(k==kelintasPagalDydi){
+                    kitasMax= Masyvas[i];
+                    break;
+            }
+        }
+
+    }
+}
