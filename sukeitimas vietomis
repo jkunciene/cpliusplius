@@ -1,0 +1,7 @@
+void sukeitimas(int Masyvas[], int kiek, int kaKeisti, int kuoKeisim){
+    for (int i=0; i<kiek; i++){
+        if(Masyvas[i]==kaKeisti){
+            Masyvas[i] = kuoKeisim;
+        }
+    }
+}
