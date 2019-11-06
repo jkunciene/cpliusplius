@@ -1,0 +1,11 @@
+//--- atspausdink elementu numerius, kurie buvo pakeisti
+void elementuNumeriai(int Masyvas[], int kiek, int ElMasyvas[], int &ElKiekis, int kriterijus ){
+    ElKiekis=0;
+    for(int i=0; i<kiekis; i++){
+        if(Masyvas[i]==kriterijus){
+           ElMasyvas[ElKiekis]=i;
+            ElKiekis++;
+            
+           }
+    }
+}
