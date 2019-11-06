@@ -1,0 +1,6 @@
+void sumavimas(int Masyvas[i], int kiek, inti koNesumuojam, int &suma){
+    suma=0;
+    if((Masyvas[i]!=koNesumuojam) and (Masyvas[i]>0){
+        suma=suma+Masyvas[i];
+    }
+}
