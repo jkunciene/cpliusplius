@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int sk, didziausias(0), kiekSk(0);
+
+
+    do{
+        kiekSk++;
+        cout<<"sk"<<kiekSk<<" =   ";
+        cin>>sk;
+        if(sk > didziausias) {
+                didziausias = sk;
+        }
+
+    }
+    while(sk!=0);
+    cout<<"didziausia "<<didziausias;
+    return 0;
+
+}
