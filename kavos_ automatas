@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int moneta, kaina, suma(0), skirtumas(0), graza ;
+    cout<<"Kiek kainuoja ? ";
+    cin>>kaina;
+    do{
+                cout<<"Meskite monetas"<<endl;
+                cin>>moneta;
+                suma=suma+moneta;
+                cout<<"Jus sumokejote "<<suma<<endl;
+        if(suma<kaina)
+        {
+
+                skirtumas=kaina-suma;
+                cout<<"Jums liko dar imesti "<<skirtumas<<endl;}
+
+    }
+    while(suma<kaina);
+    cout<<"skanaus"<<endl;
+    graza=suma-kaina;
+    cout<<"graza "<<graza;
+
+    return 0;
+
+}
