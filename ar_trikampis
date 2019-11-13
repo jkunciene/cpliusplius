@@ -1,0 +1,49 @@
+#include <iostream>
+using namespace std;
+
+void ivedimas(int& krastine, string tekstas);
+bool tikrinameKrastine(int krastine1, int krastine2, int krastine3 );
+bool arTrikampis( bool teiginys1, bool teiginys2, bool teiginys3 );
+void isvedimas(bool teiginys);
+
+int main()
+{
+    int a, b, c;
+    bool aTinka, bTinka, cTinka ;
+
+    ivedimas(a, " a= ");
+    ivedimas(b, " b= ");
+    ivedimas(c, " c = ");
+    aTinka=tikrinameKrastine(a, b, c);
+    bTinka=tikrinameKrastine(b, a, c);
+    cTinka=tikrinameKrastine(c, a, b);
+
+    cout<<aTinka<<bTinka<<cTinka;
+    bool arTrikamp;
+    arTrikamp=arTrikampis(aTinka, bTinka, cTinka);
+    isvedimas(arTrikamp);
+
+
+    return 0;
+
+}
+void ivedimas(int& krastine, string tekstas){
+cout<<"iveskite krastine"<<tekstas;
+cin>>krastine;
+}
+bool tikrinameKrastine(int krastine1, int krastine2, int krastine3 ){
+    bool arTinka;
+    arTinka=krastine1 < krastine2+krastine3;
+    return arTinka;
+
+}
+bool arTrikampis(  bool teiginys1, bool teiginys2, bool teiginys3){
+    bool tTeiginys;
+    tTeiginys= teiginys1 and teiginys2 and teiginys3;
+    return tTeiginys;
+
+}
+void isvedimas(bool teiginys){
+    if (teiginys){cout<<"Pavyks";}
+    else {cout<<"ne"; }
+}
