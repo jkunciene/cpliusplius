@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int sk, suma(0), kiekSk(0);
+    double vidurkis;
+    do{
+        kiekSk++;
+        cout<<"sk"<<kiekSk<<" =   ";
+        cin>>sk;
+        suma=suma+sk;
+
+    }
+    while(sk!=0);
+    cout<<"suma "<<suma;
+    cout<<"kiek reiksmiu  "<<kiekSk;
+
+    vidurkis=(suma)/(kiekSk-1);
+    cout<<"   vidurkis "<<vidurkis;
+    return 0;
+
+}
